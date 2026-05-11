@@ -19,7 +19,7 @@ Only transform data.
 
 from typing import Any
 
-from schemas import (
+from processed.src.pipeline.schemas import (
     MeetingRecord,
     TranscriptChunkRecord,
     ParticipantEventRecord,

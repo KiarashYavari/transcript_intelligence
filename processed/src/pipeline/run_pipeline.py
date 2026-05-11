@@ -17,18 +17,18 @@ This file should remain orchestration-focused only.
 from pathlib import Path
 import logging
 
-from constants import (
+from processed.src.pipeline.constants import (
     DATASET_DIR,
     PROCESSED_DIR,
 )
 
-from readers import (
+from processed.src.pipeline.readers import (
     get_meeting_directories,
     validate_meeting_directory,
     load_json_file,
 )
 
-from transformers import (
+from processed.src.pipeline.transformers import (
     transform_meeting_info,
     transform_transcript_chunks,
     transform_participant_events,
@@ -40,7 +40,7 @@ from transformers import (
     transform_speaker_map,
 )
 
-from parquet_writer import (
+from processed.src.pipeline.parquet_writer import (
     records_to_dataframe,
     write_parquet,
     validate_dataframe_not_empty,

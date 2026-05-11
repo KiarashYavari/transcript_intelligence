@@ -11,11 +11,11 @@ from pathlib import Path
 # PATHS
 # ============================================================
 
-ROOT_DIR = Path(__file__).resolve().parent.parent.parent
+ROOT_DIR = Path(__file__).resolve().parent
 
-DATASET_DIR = ROOT_DIR / "dataset"
+DATASET_DIR = ROOT_DIR.parents[2]  / "dataset"
 
-PROCESSED_DIR = ROOT_DIR / "processed"
+PROCESSED_DIR = ROOT_DIR.parents[2] / "processed"
 
 
 # ============================================================

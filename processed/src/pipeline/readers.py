@@ -12,7 +12,7 @@ import json
 import logging
 from typing import Any
 
-from constants import EXPECTED_FILES
+from processed.src.pipeline.constants import EXPECTED_FILES
 
 
 logger = logging.getLogger(__name__)
