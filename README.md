@@ -655,7 +655,7 @@ pip install pydantic python-dotenv
 Build the parquet warehouse from the raw JSON dataset:
 
 ```bash
-python -m src.pipeline.run_pipeline
+python -m processed.src.pipeline.run_pipeline
 ```
 
 Expected result:
@@ -667,7 +667,7 @@ Processed parquet tables are written to the configured processed data directory.
 After running the pipeline, verify the generated parquet files:
 
 ```bash
-python -m src.analysis.inspect_tables
+python -m processed.src.analysis.inspect_tables
 ```
 
 ---
@@ -677,7 +677,7 @@ python -m src.analysis.inspect_tables
 Run the analytics examples:
 
 ```bash
-python -m src.analysis.analytics_examples
+python -m processed.src.analysis.analytics_examples
 ```
 
 Example report sections:
@@ -709,7 +709,7 @@ This module is read-only and does not modify parquet files.
 Run data validation:
 
 ```bash
-python -m src.analysis.quality_checks
+python -m processed.src.analysis.quality_checks
 ```
 
 Example output:
@@ -739,7 +739,7 @@ Quality checks help confirm that the data is ready for analytics and RAG retriev
 Before querying, build the local ChromaDB vector store:
 
 ```bash
-python -m src.rag.rag_runner --build
+python -m processed.src.rag.rag_runner --build
 ```
 
 Expected output:
@@ -752,7 +752,7 @@ Documents stored: <number_of_documents>
 ## Ask a Question
 
 ```bash
-python -m src.rag.rag_runner --query "What are customers unhappy about?"
+python -m processed.src.rag.rag_runner --query "What are customers unhappy about?"
 ```
 
 The current implementation returns:
@@ -766,7 +766,7 @@ The current implementation returns:
 Filter by sentiment:
 
 ```bash
-python -m src.rag.rag_runner \
+python -m processed.src.rag.rag_runner \
   --query "What product issues are mentioned?" \
   --sentiment negative
 ```
@@ -774,7 +774,7 @@ python -m src.rag.rag_runner \
 Filter by document type:
 
 ```bash
-python -m src.rag.rag_runner \
+python -m processed.src.rag.rag_runner \
   --query "What follow-up tasks were created?" \
   --document-type action_item
 ```
@@ -782,7 +782,7 @@ python -m src.rag.rag_runner \
 Filter by call type:
 
 ```bash
-python -m src.rag.rag_runner \
+python -m processed.src.rag.rag_runner \
   --query "What are support customers complaining about?" \
   --call-type customer_support
 ```
@@ -1089,26 +1089,6 @@ Possible integrations:
 - Ollama local models
 - Hugging Face local models
 
-## Add Streamlit Dashboard
-
-A dashboard could expose:
-
-- Topic explorer
-- Sentiment charts
-- Meeting search
-- Speaker analytics
-- Action item browser
-- RAG query interface
-
-Proposed structure:
-
-```text
-src/dashboard/
-├── streamlit_app.py
-├── charts.py
-├── filters.py
-└── metrics.py
-```
 
 ## Add Hybrid Retrieval
 
