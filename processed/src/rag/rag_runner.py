@@ -7,13 +7,13 @@ Command-line runner for building and querying the RAG system.
 Usage:
 
 Build vector database:
-    python -m src.rag.rag_runner --build
+    python -m processed.src.rag.rag_runner --build
 
 Ask a question:
-    python -m src.rag.rag_runner --query "What are customers unhappy about?"
+    python -m processed.src.rag.rag_runner --query "What are customers unhappy about?"
 
 Ask with filters:
-    python -m src.rag.rag_runner --query "What are the major issues?" --call-type customer_support
+    python -m processed.src.rag.rag_runner --query "What are the major issues?" --call-type customer_support
 """
 
 from __future__ import annotations
